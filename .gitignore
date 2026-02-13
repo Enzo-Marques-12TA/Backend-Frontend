@@ -1,0 +1,11 @@
+# Node modules
+Backend/node_modules/
+# Logs
+Backend/npm-debug.log*
+# Environment
+.env
+# VSCode
+.vscode/
+# Sistema
+Thumbs.db
+.DS_Store

@@ -8,9 +8,9 @@ app.use(express.json());
 
 // Configuração do banco de dados
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', // Altere se necessário
-  password: '', // Altere se necessário
+  host: 'benserverplex.ddns.net',
+  user: 'alunos', // Altere se necessário
+  password: 'senhaAlunos', // Altere se necessário
   database: 'web_03ta'
 });
 
@@ -37,6 +37,16 @@ app.post('/produtos', (req, res) => {
   db.query('INSERT INTO produtos (nome, preco) VALUES (?, ?)', [nome, preco], (err, result) => {
     if (err) return res.status(500).json({ erro: err });
     res.json({ id: result.insertId, nome, preco });
+  });
+});
+
+// Rota para deletar um produto
+app.delete('/produtos/:id', (req, res) => {
+  const { id } = req.params;
+  
+  db.query('DELETE FROM produtos WHERE id = ?', [id], (err, result) => {
+    if (err) return res.status(500).json({ erro: err });
+    res.json({ mensagem: 'Produto deletado com sucesso!' });
   });
 });
 

@@ -9,3 +9,16 @@ th { background: #eee; }
 button { background: #333; color: #fff; border: none; padding: 0.5em 1em; border-radius: 4px; cursor: pointer; }
 button:hover { background: #555; }
 #mensagem { margin-top: 1em; color: green; }
+.btn-deletar {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-deletar:hover {
+  background-color: #c82333;
+}
